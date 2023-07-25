@@ -1,5 +1,7 @@
 ﻿using BarberHub.Repositories;
 using BarberHub.Repositories.Interfaces;
+using BarberHub.Services;
+using BarberHub.Services.Interfaces;
 
 namespace BarberHub.ProjectSettings
 {
@@ -8,6 +10,7 @@ namespace BarberHub.ProjectSettings
         public static void Go(WebApplicationBuilder builder)
         {
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IUserService, UserService>();
         }
     }
 }

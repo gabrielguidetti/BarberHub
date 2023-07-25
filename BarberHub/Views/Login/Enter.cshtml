@@ -1,0 +1,34 @@
+﻿@model BarberHub.ViewModel.UserViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Login</title>
+    </head>
+    <body>
+        <form asp-controller="Login" asp-action="Enter" method="post">
+            <h1>Login</h1>
+            <input type="email" placeholder="Email" asp-for="Email" />
+            <input type="password" placeholder="Senha" asp-for="Password" />
+
+            <label>
+                <input type="checkbox" asp-for="KeepLoggedIn" />
+                Continuar conectado!
+            </label>
+            <button type="submit">Login</button>
+
+            @if (ViewData["ValidateMessageLogin"] != null)
+            {
+                <br />
+                <br />
+                <label>@ViewData["ValidateMessageLogin"]</label>
+            }
+        </form>
+        <p>Não tem uma conta? <a href="@Url.Action("Register", "Login")">Criar conta!</a></p>
+    </body>
+</html>

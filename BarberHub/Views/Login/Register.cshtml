@@ -1,0 +1,46 @@
+﻿@using BarberHub.Enumerators
+@model BarberHub.ViewModel.UserViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Login</title>
+    </head>
+    <body>
+        <form asp-controller="Login" asp-action="Register" method="post">
+            <h1>Criar Conta</h1>
+            @Html.LabelFor(model => model.FirstName)<br />
+            @Html.EditorFor(model => model.FirstName)<br /><br />
+
+            @Html.LabelFor(model => model.LastName)<br />
+            @Html.EditorFor(model => model.LastName)<br /><br />
+
+            @Html.LabelFor(model => model.Email)<br />
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new {@type = "email"} })<br /><br />
+
+            @Html.LabelFor(model => model.Type)<br />
+            <label>@Html.RadioButtonFor(model => model.Type, ETypeUser.Client) Cliente</label>
+            <label>@Html.RadioButtonFor(model => model.Type, ETypeUser.BarberShop) Barbearia</label><br /><br />
+
+            @Html.LabelFor(model => model.Password)<br />
+            @Html.EditorFor(model => model.Password, new {htmlAttributes = new {@type = "password"} })<br /><br />
+
+            @Html.LabelFor(model => model.ConfirmPassword)<br />
+            @Html.EditorFor(model => model.ConfirmPassword, new {htmlAttributes = new {@type = "password"} })<br /><br />
+
+            <button type="submit">Criar Conta!</button>
+
+            @if (ViewData["ValidateMessageRegister"] != null)
+            {
+                <br />
+                <br />
+                <label>@ViewData["ValidateMessageRegister"]</label>
+            }
+        </form>
+    </body>
+</html>

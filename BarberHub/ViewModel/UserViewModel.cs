@@ -30,5 +30,13 @@ namespace BarberHub.ViewModel
         [StringLength(20)]
         [Display(Name = "Senha")]
         public string Password { get; set; }
+
+        [Required]
+        [StringLength(20)]
+        [Display(Name = "Confirmar Senha")]
+        public string ConfirmPassword { get; set; }
+
+        [Display(Name = "Continuar logado")]
+        public bool KeepLoggedIn { get; set; }
     }
 }

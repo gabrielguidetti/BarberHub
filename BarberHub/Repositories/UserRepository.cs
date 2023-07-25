@@ -13,6 +13,13 @@ namespace BarberHub.Repositories
             _context = context;
         }
 
+        public User Add(User model)
+        {
+            _context.Users.Add(model);
+            _context.SaveChanges();
+            return model;
+        }
+
         public User Login(string email, string password)
         {
             var result = _context.Users.FirstOrDefault(x => x.Email == email && x.Password == password);
