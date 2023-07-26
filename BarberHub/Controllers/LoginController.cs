@@ -1,5 +1,4 @@
-﻿using BarberHub.Repositories;
-using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -35,8 +34,8 @@ namespace BarberHub.Controllers
             if (model != null)
             {
                 List<Claim> claims = new List<Claim>() {
-                    new Claim(ClaimTypes.Name, modelLogin.Email),
-                    new Claim(ClaimTypes.Role, modelLogin.Type.ToString())
+                    new Claim(ClaimTypes.Name, model.Email),
+                    new Claim(ClaimTypes.Role, model.Type.ToString())
                 };
 
                 ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims,
