@@ -34,8 +34,9 @@ namespace BarberHub.Controllers
             if (model != null)
             {
                 List<Claim> claims = new List<Claim>() {
-                    new Claim(ClaimTypes.Name, model.Email),
-                    new Claim(ClaimTypes.Role, model.Type.ToString())
+                    new Claim(ClaimTypes.Name, model.FirstName),
+                    new Claim(ClaimTypes.Role, model.Type.ToString()),
+                    new Claim(ClaimTypes.Authentication, model.Id.ToString())
                 };
 
                 ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims,
