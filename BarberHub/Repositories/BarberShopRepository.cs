@@ -13,6 +13,13 @@ namespace BarberHub.Repositories
             _context =  context;
         }
 
+        public BarberShop Add(BarberShop model)
+        {
+            _context.BarberShops.Add(model);
+            _context.SaveChanges();
+            return model;
+        }
+
         public BarberShop GetByUser(int userId)
         {
             var result = _context.BarberShops.FirstOrDefault(x => x.UserId == userId);

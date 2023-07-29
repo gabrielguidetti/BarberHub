@@ -1,5 +1,6 @@
 ﻿using BarberHub.Models;
 using Microsoft.EntityFrameworkCore;
+using BarberHub.ViewModel;
 
 namespace BarberHub.ProjectSettings
 {
@@ -15,5 +16,6 @@ namespace BarberHub.ProjectSettings
         public DbSet<Service> Services { get; set; }
         public DbSet<MarkedService> MarkedServices { get; set; }
         public DbSet<BarberService> BarberServices { get; set; }
+        public DbSet<BarberHub.ViewModel.BarberShopViewModel> BarberShopViewModel { get; set; }
     }
 }

@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using BarberHub.Models;
 using BarberHub.Repositories.Interfaces;
 using BarberHub.Services.Interfaces;
 using BarberHub.ViewModel;
+using System.Security.Claims;
 
 namespace BarberHub.Services
 {
@@ -23,6 +25,16 @@ namespace BarberHub.Services
 
             if (result == null)
                 return null;
+
+            return _mapper.Map<BarberShopViewModel>(result);
+        }
+
+        public BarberShopViewModel Add(BarberShopViewModel model)
+        {
+            if(model.Name == null || model.Address == null)
+                return null;
+
+            var result = BarberShopRepository.Add(_mapper.Map<BarberShop>(model));
 
             return _mapper.Map<BarberShopViewModel>(result);
         }

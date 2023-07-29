@@ -1,0 +1,33 @@
+﻿@model BarberHub.ViewModel.BarberShopViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Criar Barbearia!</h1>
+<hr />
+<div>
+    <div>
+        <form asp-action="Create">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name): 
+                @Html.EditorFor(model => model.Name)
+            </div><br />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address):
+                @Html.EditorFor(model => model.Address)
+            </div><br />
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-primary" />
+            </div>
+
+            @if (ViewData["ValidateMessage"] != null)
+            {
+                <br />
+                <br />
+                <label>@ViewData["ValidateMessage"]</label>
+            }
+        </form>
+    </div>
+</div>
+
