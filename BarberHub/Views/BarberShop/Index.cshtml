@@ -25,3 +25,19 @@
     </dl>
 </div>
 <a asp-action="Edit">EDITAR!</a>
+
+<h2>LISTA DE BARBEIROS</h2><br />
+@if(!Model.Barbers.Any())
+{
+    <a>Não existe nenhum barbeiro vinculado nessa barbearia!</a><br />
+} else
+{
+    foreach(var barbers in Model.Barbers)
+    {
+        <div class="border border-dark">
+            <span>Name: @barbers.Name</span><br />
+            <span>Hora de inicio: @barbers.StartWorkTime</span>
+        </div>
+    }
+}
+<a asp-controller="Barber" asp-action="Index">Adicionar barbeiro!</a>

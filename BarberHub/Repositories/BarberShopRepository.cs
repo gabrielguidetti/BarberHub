@@ -23,7 +23,7 @@ namespace BarberHub.Repositories
 
         public BarberShop GetByUser(int userId)
         {
-            var result = _context.BarberShops.FirstOrDefault(x => x.UserId == userId);
+            var result = _context.BarberShops.Include(x => x.Barbers).FirstOrDefault(x => x.UserId == userId);
 
             if (result == null)
                 return null;

@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BarberHub.Models
@@ -22,6 +21,7 @@ namespace BarberHub.Models
 
         public int BarberShopId { get; set; }
 
+        [ForeignKey("BarberShopId")]
         public BarberShop BarberShop { get; set; }
     }
 }

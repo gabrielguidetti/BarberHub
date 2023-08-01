@@ -1,4 +1,5 @@
 ﻿
+using BarberHub.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace BarberHub.ViewModel
@@ -18,5 +19,12 @@ namespace BarberHub.ViewModel
         public string Address { get; set; }
 
         public int UserId { get; set; }
+
+        public IEnumerable<Barber> Barbers { get;set; }
+
+        public BarberShopViewModel()
+        {
+            Barbers = new List<Barber>();
+        }
     }
 }
