@@ -6,5 +6,6 @@ namespace BarberHub.Repositories.Interfaces
     {
         BarberShop GetByUser(int userId);
         BarberShop Add(BarberShop model);
+        BarberShop Update(BarberShop model);
     }
 }

@@ -6,5 +6,6 @@ namespace BarberHub.Services.Interfaces
     {
         BarberShopViewModel GetByUser(int userId);
         BarberShopViewModel Add(BarberShopViewModel model);
+        BarberShopViewModel Update(BarberShopViewModel model);
     }
 }

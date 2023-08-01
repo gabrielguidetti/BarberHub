@@ -23,16 +23,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LogOut">LogOut</a>
                         </li>
                         @{
                             if(ViewData["Role"] != null)
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Perfil" asp-action="@ViewData["Role"]">Perfil</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="@ViewData["Role"]" asp-action="Index">Perfil</a>
                                 </li>
                             }
                         }

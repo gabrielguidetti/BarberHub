@@ -1,6 +1,7 @@
 ﻿using BarberHub.Models;
 using BarberHub.ProjectSettings;
 using BarberHub.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace BarberHub.Repositories
 {
@@ -28,6 +29,13 @@ namespace BarberHub.Repositories
                 return null;
 
             return result;
+        }
+
+        public BarberShop Update(BarberShop model)
+        {
+            _context.Entry(model).State = EntityState.Modified;
+            _context.SaveChanges();
+            return model;
         }
     }
 }
