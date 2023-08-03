@@ -1,6 +1,4 @@
-﻿using BarberHub.Models;
-using BarberHub.Services;
-using BarberHub.Services.Interfaces;
+﻿using BarberHub.Services.Interfaces;
 using BarberHub.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

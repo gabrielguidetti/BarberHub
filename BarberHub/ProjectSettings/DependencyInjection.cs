@@ -14,6 +14,9 @@ namespace BarberHub.ProjectSettings
 
             builder.Services.AddScoped<IBarberShopRepository, BarberShopRepository>();
             builder.Services.AddScoped<IBarberShopService, BarberShopService>();
+
+            builder.Services.AddScoped<IBarberRepository, BarberRepository>();
+            builder.Services.AddScoped<IBarberService, BarberService>();
         }
     }
 }

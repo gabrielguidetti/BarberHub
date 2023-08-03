@@ -37,7 +37,9 @@
         <div class="border border-dark">
             <span>Name: @barbers.Name</span><br />
             <span>Hora de inicio: @barbers.StartWorkTime</span>
+            <a asp-controller="Barber" asp-action="Edit" asp-route-id="@barbers.Id">EDITAR</a>
+            <a asp-controller="Barber" asp-action="Delete" asp-route-id="@barbers.Id">DELETAR</a>
         </div>
     }
 }
-<a asp-controller="Barber" asp-action="Index">Adicionar barbeiro!</a>
+<a asp-controller="Barber" asp-action="Create" asp-route-barberShopId="@Model.Id" >Adicionar barbeiro!</a>

@@ -13,6 +13,9 @@ namespace BarberHub.ProjectSettings
 
             CreateMap<BarberShop, BarberShopViewModel>()
                 .ReverseMap();
+
+            CreateMap<Barber, BarberViewModel>()
+                .ReverseMap();
         }
     }
 }

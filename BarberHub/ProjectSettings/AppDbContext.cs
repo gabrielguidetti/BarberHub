@@ -16,5 +16,6 @@ namespace BarberHub.ProjectSettings
         public DbSet<Service> Services { get; set; }
         public DbSet<MarkedService> MarkedServices { get; set; }
         public DbSet<BarberService> BarberServices { get; set; }
+        public DbSet<BarberHub.ViewModel.BarberViewModel> BarberViewModel { get; set; }
     }
 }
