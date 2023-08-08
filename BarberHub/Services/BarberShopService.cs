@@ -31,7 +31,7 @@ namespace BarberHub.Services
 
         public BarberShopViewModel Add(BarberShopViewModel model)
         {
-            if(!Validate(model))
+            if(!IsValid(model))
                 return null;
 
             var result = BarberShopRepository.Add(_mapper.Map<BarberShop>(model));
@@ -41,7 +41,7 @@ namespace BarberHub.Services
 
         public BarberShopViewModel Update(BarberShopViewModel model)
         {
-            if (!Validate(model))
+            if (!IsValid(model))
                 return null;
 
             var result = BarberShopRepository.Update(_mapper.Map<BarberShop>(model));
@@ -49,7 +49,7 @@ namespace BarberHub.Services
             return _mapper.Map<BarberShopViewModel>(result);
         }
 
-        private bool Validate(BarberShopViewModel model)
+        private bool IsValid(BarberShopViewModel model)
         {
             if (model.Name == null || model.Address == null)
                 return false;

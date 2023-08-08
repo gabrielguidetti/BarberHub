@@ -45,5 +45,15 @@ namespace BarberHub.Services
 
             return _mapper.Map<BarberViewModel>(result);
         }
+
+        public BarberViewModel Update(BarberViewModel model)
+        {
+            if (!IsValid(model))
+                return null;
+
+            var result = BarberRepository.Update(_mapper.Map<Barber>(model));
+
+            return _mapper.Map<BarberViewModel>(result);
+        }
     }
 }

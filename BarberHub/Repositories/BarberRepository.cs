@@ -1,6 +1,7 @@
 ﻿using BarberHub.Models;
 using BarberHub.ProjectSettings;
 using BarberHub.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace BarberHub.Repositories
 {
@@ -23,6 +24,13 @@ namespace BarberHub.Repositories
         public Barber Get(int id)
         {
             return _context.Barbers.FirstOrDefault(x => x.Id == id);
+        }
+
+        public Barber Update(Barber model)
+        {
+            _context.Entry(model).State = EntityState.Modified;
+            _context.SaveChanges();
+            return model;
         }
     }
 }

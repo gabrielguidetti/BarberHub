@@ -11,37 +11,33 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
+            @Html.HiddenFor(model => model.BarberShopId)
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
+                @Html.LabelFor(model => model.Name):
+                @Html.EditorFor(model => model.Name)
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StartWorkTime" class="control-label"></label>
-                <input asp-for="StartWorkTime" class="form-control" />
+                @Html.LabelFor(model => model.StartWorkTime):
+                @Html.EditorFor(model => model.StartWorkTime)
                 <span asp-validation-for="StartWorkTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FinishWorkTime" class="control-label"></label>
-                <input asp-for="FinishWorkTime" class="form-control" />
+                @Html.LabelFor(model => model.FinishWorkTime):
+                @Html.EditorFor(model => model.FinishWorkTime)
                 <span asp-validation-for="FinishWorkTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="BarberShopId" class="control-label"></label>
-                <input asp-for="BarberShopId" class="form-control" />
-                <span asp-validation-for="BarberShopId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" asp-controller="BarberShop" >Voltar</a>
 </div>
 
 @section Scripts {

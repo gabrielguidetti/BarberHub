@@ -57,5 +57,20 @@ namespace BarberHub.Controllers
 
             return View(barber);
         }
+
+        [Authorize(Roles = "BarberShop")]
+        [HttpPost]
+        public IActionResult Edit(BarberViewModel model)
+        {
+            var result = BarberService.Update(model);
+
+            if (result == null)
+            {
+                ViewData["ValidateMessage"] = "Erro ao criar barbeiro, verifique se todos os campos estão preenchidos!";
+                return View();
+            }
+
+            return RedirectToAction("Index", "BarberShop");
+        }
     }
 }
